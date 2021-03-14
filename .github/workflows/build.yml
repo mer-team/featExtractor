@@ -39,7 +39,7 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pip install pytest pika
+        pip install pytest pika enum
         pytest
 
     - name: Dump docker logs on failure
