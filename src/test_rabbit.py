@@ -1,10 +1,10 @@
 import pika
 import os
 
-mqhost = os.environ.get("HOST")
-mquser = os.environ.get("USER")
-mqpass = os.environ.get("PASS")
-mqport = os.environ.get("PORT")
+mqhost = os.environ.get("MQHOST")
+mquser = os.environ.get("MQUSER")
+mqpass = os.environ.get("MQPASS")
+mqport = os.environ.get("MQPORT")
 
 credentials =  pika.PlainCredentials(mquser, mqpass)
 connection = pika.BlockingConnection(pika.ConnectionParameters(mqhost, mqport, '/', credentials))
