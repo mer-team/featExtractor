@@ -24,7 +24,7 @@ def test_rabbitmq():
 
 def test_send_message():
     """Send rabbitmq vID to process"""
-    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', 5672, '/', credentials))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(mqhost, mqport, '/', credentials))
     channel = connection.channel()
     channel.queue_declare(queue=queue_send)
     channel.basic_publish(exchange='', routing_key=queue_send, body=vID)
