@@ -31,12 +31,12 @@ docker run -d -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest -p 1
 
 Build local `featExtractor` image from source
 ```
-docker build -t featextractorlocal:latest .
+docker build -t featextractor:local .
 ```
 
 Run local `featExtractor` image
 ```
-docker run -it --rm -e TIME=10 -e PORT=5672 -e PASS=guest -e USER=guest -e HOST=localhost -e MNG_PORT=15672 -v "<Local DIR>":"/Audios" --net=host featextractorlocal:latest
+docker run -it --rm -e TIME=10 -e PORT=5672 -e PASS=guest -e USER=guest -e HOST=localhost -e MNG_PORT=15672 -v "<Local DIR>":"/Audios" --net=host featextractor:local
 ```
 
 Run official `featExtractor` image

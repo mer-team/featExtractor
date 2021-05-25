@@ -11,8 +11,8 @@ COPY /src /featExtractor
 
 WORKDIR /featExtractor
 
-RUN apt-get update -y
-RUN apt-get install curl -y
+RUN apt-get update && apt-get install curl -y
+RUN rm -rf /var/lib/apt/lists
 
 RUN pip install -r ./requirements.txt
 
